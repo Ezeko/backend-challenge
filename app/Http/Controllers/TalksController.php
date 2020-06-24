@@ -30,9 +30,12 @@ class TalksController extends Controller
         $created_talk = $talk->save();
 
         if ($created_talk) {
-            return response($content =['message' => 'Talk created successfully', 'data' => [], 'response'=> 'created'], 201);
+            return "<script>alert('Talk created'); window.location.replace('/talk/add')</script>";
+            
+            //return response($content =['message' => 'Talk created successfully', 'data' => [], 'response'=> 'created'], 201);
         }else{
-            return response($content =['message' => 'Talk not created', 'data' => $php_errormsg, 'response'=> 'error'], 400);
+            return "<script>alert('oops! Talk cannot be created'); window.location.replace('/talk/add')</script>";
+            //return response($content =['message' => 'Talk not created', 'data' => $php_errormsg, 'response'=> 'error'], 400);
         }
     }
 
