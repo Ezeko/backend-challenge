@@ -25,7 +25,7 @@ class TalksController extends Controller
 
         $talk = new Talk();
         $talk->title = $request->title;
-        $talk->talk_detail = $request->talk_detail;
+        $talk->talks_detail = $request->talk_detail;
         $talk->speaker = $request->speaker;
         $created_talk = $talk->save();
 
