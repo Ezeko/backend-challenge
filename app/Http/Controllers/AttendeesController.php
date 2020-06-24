@@ -75,24 +75,24 @@ class AttendeesController extends Controller
 
                     if ($saved){
                         //return 201
-                        return response($content =['message' => 'Attendee added to talk successfully', 'data' => [], 'response'=> 'created'], 201);
+                        return response($content =['message' => 'Attendee added to talk successfully', 'data' => [], 'response'=> 'created'], $status =201);
                     }else{
                         //return 400
-                        return response($content =['message' => 'error occurred', 'data' => [], 'response'=> 'error'], 400);
+                        return response($content =['message' => 'error occurred', 'data' => [], 'response'=> 'error'], $status=400);
                     }
                 }else{
                     //return 404 error
-                    return response($content =['message' => 'Bad request', 'data' => [], 'response'=> 'error'], 404);
+                    return response($content =['message' => 'Bad request', 'data' => [], 'response'=> 'error'], $status =404);
                 }
 
             }else{
                 //return 403 error
-                return response($content =['message' => 'Unauthorized attendee', 'data' => [], 'response'=> 'error'], 403);
+                return response($content =['message' => 'Unauthorized attendee', 'data' => [], 'response'=> 'error'],$status= 403);
             }
 
         }else{
             //return 403 error
-            return response($content =['message' => 'Unauthorized request', 'data' => [], 'response'=> 'error'], 403);
+            return response($content =['message' => 'Unauthorized request', 'data' => [], 'response'=> 'error'], $status= 403);
         }
         
         
